@@ -38,8 +38,10 @@
 
 
 const http = require('http');
-const port = 3333;
+// const port = 3333;
 const express = require('express');
+
+const { PORT = 3333 } = process.env;
 
 const app = express();
 
@@ -70,7 +72,7 @@ const requestHandler = (request, response) => {}
 
 const server = http.createServer(app)
 
-server.listen(port, (err) => {
+server.listen($PORT, (err) => {
   if(err) {
     return console.log('error', err)
   }
